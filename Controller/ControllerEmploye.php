@@ -2,8 +2,6 @@
 require_once __DIR__."/../Model/modeleEmploye.php";
 //variable ...
 class controlleurEmploye{
-    private $action;
-    private $view;
     private $modele;
 
     public function __construct()
