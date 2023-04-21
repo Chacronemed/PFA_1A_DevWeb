@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="../Produits/AllProduits.php">
                             <i class='bx bxs-package icon'></i>
                             <span class="text nav-text">Produits</span>
                         </a>

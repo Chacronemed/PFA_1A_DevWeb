@@ -93,6 +93,65 @@ th, td {
 tr {
     height: 50px;
 }
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
 
 @media (max-width:768px){
     .container{
@@ -104,6 +163,11 @@ tr {
 <div class="container">
 
     <h1 class="heading">Liste des Produits</h1>
+    
+    <a href="#formulaireProduit"><button type="button" class="button"></a>
+    <span class="button__text">Ajouter</span>
+    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+    </button>
 
     <div class="box-container">
         <?php $data=new ControllerProduits;
@@ -129,44 +193,11 @@ tr {
                  <?php endforeach; ?>
                 </table>
                 <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>-->
-                <a href="#" class="btn">read more</a>
+                <a href="#" class="btn">modifier</a>
+                <a href="#" class="btn">supprimer</a>
             </div>
         <?php endforeach; ?>
         
-        <!--<div class="box">
-            <img src="image/icon-2.png" alt="image produit 1">
-            <h3>CSS 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="box">
-            <img src="image/icon-3.png" alt="">
-            <h3>JavaScript</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="box">
-            <img src="image/icon-4.png" alt="">
-            <h3>SASS</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="box">
-            <img src="image/icon-5.png" alt="">
-            <h3>JQuery</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="box">
-            <img src="image/icon-6.png" alt="">
-            <h3>React.js</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
-            <a href="#" class="btn">read more</a>
-        </div>-->
 
     </div>
 
