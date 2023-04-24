@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="../SideBar/logo.png" alt="logo company">
                 </span>
 
                 <div class="text logo-text">

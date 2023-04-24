@@ -96,7 +96,7 @@ position: relative;
                 <th class="table_head">Telephone</th>
                 <th class="table_head">Type utilisateur</th>
                 <th class="table_head" style="border: none;">Modifier</th>
-                <th class="table_head" style="border: none;">Ajouter</th>
+                <th class="table_head" style="border: none;">Supprimer</th>
             </tr>
         </thead>
         <tbody>
@@ -109,14 +109,15 @@ position: relative;
                     <td class="table_data"><?= $employe['Telephone']?></td>
                     <td class="table_data"><?= $employe['type_user']?></td>
                     <td class="table_icon"><a href="" alt='modifier'><i class='bx bxs-edit-alt' style='color:#20f136' ></i></a></td>
-                    <td class="table_icon"><a href="" alt='delete'><i class='bx bxs-trash' style='color:#20f136'  ></i></i></a></td>
+                    <td class="table_icon"><a href="../../../1A_PFA/Controller/ControllerEmploye.php?code=<?php echo $employe['ID_Empl']; ?>&action=delete" alt="delete"><i class="bx bxs-trash" style="color:#20f136"></i></a></td>
+
                 </tr>
             <?php endforeach; ?>
         </tbody>
         
     </table>
     <div class="buttonDiv">
-    <a href="AddEmployes.php"><button>ajouter</button></a>
+    <a href="../../../1A_PFA/Views/Employes/AddEmploye/AddEmployes.php"><button>ajouter</button></a>
     </div>
  </div>
 </section>
