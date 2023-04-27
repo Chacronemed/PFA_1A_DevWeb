@@ -16,7 +16,8 @@ $employe=$data->SelectEmployeAction($id);
 </head>
 <body>
 <div class="login-box">
-  <form action="../../../../1A_PFA/Controller/ControllerEmploye.php?action=add" method="POST">
+  <form action="../../../../1A_PFA/Controller/ControllerEmploye.php?action=edit" method="POST">
+    <input type="hidden" name="ID_Empl" value="<?= $employe['ID_Empl'] ?>">
   <div class="user-box">
             <input type="text" name="Nom" required="" value="<?= $employe['Nom'] ?>">
             <label>Nom</label>

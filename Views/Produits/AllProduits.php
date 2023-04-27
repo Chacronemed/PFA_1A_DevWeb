@@ -31,7 +31,7 @@ require __DIR__.'/../../Controller/ControllerProduits.php';
 
 .container .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));*/
     gap:15px;
 }
 
@@ -158,16 +158,26 @@ tr {
         padding:20px;
     }
 }
+
+
+
+/*stop going backward this is your checkpoint */
+
+
+
+
+
+
 </style>
 <section class="home">
 <div class="container">
 
     <h1 class="heading">Liste des Produits</h1>
     
-    <a href="#formulaireProduit"><button type="button" class="button"></a>
+    <a href="../Produits/AddProduit/AddProduit.php"><button type="button" class="button">
     <span class="button__text">Ajouter</span>
     <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
-    </button>
+    </button></a>
 
     <div class="box-container">
         <?php $data=new ControllerProduits;
@@ -189,12 +199,12 @@ tr {
                          <td><?= $detail['Nom'] ?></td>
                          <td><?= $detail['ID_Produit'] ?></td>
                          <td><?= $detail['ID_Cat'] ?></td>
+                         <td><a href="../Produits/EditProduit/editProduit.php?code=<?php echo $detail['ID_Produit'];?>" alt="modifier"><i class='bx bxs-edit-alt' style='color:#20f136' ></i></a></td>
+                         <td><a href="../../Controller/ControllerProduits.php?action=delete&code=<?php echo $detail['ID_Produit']; ?>" alt="supprimer"><i class="bx bxs-trash" style="color:#20f136"></i></a></td>
                      </tr>
                  <?php endforeach; ?>
                 </table>
                 <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>-->
-                <a href="#" class="btn">modifier</a>
-                <a href="#" class="btn">supprimer</a>
             </div>
         <?php endforeach; ?>
         

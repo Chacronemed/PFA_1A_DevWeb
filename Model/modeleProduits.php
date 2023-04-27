@@ -8,6 +8,24 @@ class modeleProduit{
             die("Connection failed: " . mysqli_connect_error());
         }
     }
+    public function AddProduit($produit){
+        $query=$this->db->prepare('INSERT INTO produits (ID_Produit, Nom, ID_Cat) VALUES (NULL, ?, ?)');
+        $query->execute([$produit['Nom'], $produit['ID_Cat']]);        
+        return $query;
+    }
+    public function SelectProduit($ID){
+        $query=$this->db->prepare('SELECT * FROM produits where ID_Produit=?');
+        $query->execute(array($ID));
+        return $query->fetch();
+    }
+    public function DeleteProduit($code){
+        $query=$this->db->prepare('DELETE FROM produits WHERE ID_Produit=?');
+        $query->execute($code);
+    }
+    public function UpdateProduit($produit){
+        $query = $this->db->prepare('UPDATE produits SET Nom=?, ID_Cat=? WHERE ID_Produit=?');
+        $query->execute([$produit['Nom'], $produit['ID_Cat'], $produit['ID_Produit']]);
+    }
     public function ShowAll(){
         $query=$this->db->prepare("SELECT * From produits");
         $query->execute();
