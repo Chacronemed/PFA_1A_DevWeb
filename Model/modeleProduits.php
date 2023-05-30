@@ -19,8 +19,9 @@ class modeleProduit{
         return $query->fetch();
     }
     public function DeleteProduit($code){
-        $query=$this->db->prepare('DELETE FROM produits WHERE ID_Produit=?');
-        $query->execute($code);
+        $query = $this->db->prepare('DELETE FROM produits WHERE ID_Produit = ?');
+        $query->execute($code);  
+        return $query;
     }
     public function UpdateProduit($produit){
         $query = $this->db->prepare('UPDATE produits SET Nom=?, ID_Cat=? WHERE ID_Produit=?');

@@ -4,75 +4,75 @@ require __DIR__."/../SideBar/SideBar.php";
 ?>
 <section class="home"> 
 <style>
-table {
-    margin: auto;
-    width: 90%;
-    border-collapse: collapse;
-    table-layout: auto;
-    justify-content: center;
-}
+    table {
+        margin: auto;
+        width: 90%;
+        border-collapse: collapse;
+        table-layout: auto;
+        justify-content: center;
+    }
 
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px dotted var(--text-color);
-}
-.table_head{
-    font-size: 15px;
-    color: var(--text-color);
-}
-.table_data{
-    font-size: 15px;
-    color: var(--text-color);    
-}
-.table_icon{
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px dotted var(--text-color);
+    }
+    .table_head{
+        font-size: 15px;
+        color: var(--text-color);
+    }
+    .table_data{
+        font-size: 15px;
+        color: var(--text-color);    
+    }
+    .table_icon{
+        border: none;
+    }
+    /* Increase the font size of the table headers */
+    th {
+        font-size: 16px;
+    }
+
+    /* Increase the height of each row */
+    tr {
+        height: 50px;
+    }
+    /*button CSS */
+    button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
     border: none;
-}
-/* Increase the font size of the table headers */
-th {
-    font-size: 16px;
-}
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 45%; /* Adjust the value as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    }
 
-/* Increase the height of each row */
-tr {
-    height: 50px;
-}
-/*button CSS */
-button {
-  padding: 1.3em 3em;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  position: absolute;
-  left: 45%; /* Adjust the value as needed */
-  top: 50%;
-  transform: translateY(-50%);
-}
+    button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+    }
 
-button:hover {
-  background-color: #23c483;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-.buttonDiv{
-position: relative;
-  width: auto;
-  height: 100px;
-}
+    button:active {
+    transform: translateY(-1px);
+    }
+    .buttonDiv{
+    position: relative;
+    width: auto;
+    height: 100px;
+    }
 /*end of button css */
 </style>
 

@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="../SideBar/logo.png" alt="logo company">
+                    <img src="../../../1A_PFA/images/logo.png" alt="logo company">
                 </span>
 
                 <div class="text logo-text">
@@ -40,21 +40,21 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="../Employes/AllEmployes.php">
+                        <a href="../../../1A_PFA/Views/Employes/AllEmployes.php">
                             <i class='bx bxs-user-detail icon'></i>
                             <span class="text nav-text">Employes</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="../Produits/AllProduits.php">
+                        <a href="../../../1A_PFA/Views/Produits/AllProduits.php">
                             <i class='bx bxs-package icon'></i>
                             <span class="text nav-text">Produits</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="../../../1A_PFA/Controller/ControllerAffectation.php">
                             <i class='bx bx-user-check icon'></i>
                             <span class="text nav-text">affectations</span>
                         </a>

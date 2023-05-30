@@ -40,7 +40,7 @@ class ControllerProduits{
     }
 
     public function DeleteProduitAction($Code){
-        $produit= $this->modeleProduit->DeleteProduit(array($Code));
+        $produit= $this->modeleProduit->DeleteProduit($Code);
         return $produit;
     }
     
@@ -60,7 +60,7 @@ class ControllerProduits{
         
         if(isset($_GET['action'])){
          $action=$_GET['action'];}
-        if(isset($_POST['action'])){
+        else if(isset($_POST['action'])){
          $action=$_POST['action'];}
         if(isset($action)) {
          switch($action){
@@ -73,7 +73,7 @@ class ControllerProduits{
             case 'delete':
                 $code=$_GET['code'];
                 $this->DeleteProduitAction(array($code));
-                header('Location: ../Views/Produits/AllProduits.php');
+                header("Location: ../Views/Produits/AllProduits.php?");
                 break;
             case 'edit':
                 $employe=$_POST;

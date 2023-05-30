@@ -35,7 +35,7 @@ $employe=$data->SelectEmployeAction($id);
             <label>mot de pass</label>          
         </div>
         <div class="user-box">
-            <li><label style="padding-top: 0px; color:greenyellow;">afficher le mot de passe</label><input type="checkbox" onclick="togglePassword()">   </li>  
+            <li><label style="padding-top: 0px; color:gray;">afficher le mot de passe</label><input type="checkbox" onclick="togglePassword()"> </li>  
         </div>
         <div class="user-box">
             <input type="number" name="Telephone" required="" value="<?=$employe['Telephone'] ?>">
