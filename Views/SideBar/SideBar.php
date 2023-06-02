@@ -11,6 +11,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
+    <!----======== Bootstrap ======== -->
     <!--<title>Dashboard Sidebar Menu</title>--> 
 </head>
 <body>
@@ -75,7 +76,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="../../../1A_PFA/Controller/ControllerHistorique.php">
                             <i class='bx bx-history icon'></i>
                             <span class="text nav-text">historique</span>
                         </a>
