@@ -108,8 +108,8 @@ require __DIR__."/../SideBar/SideBar.php";
                     <td class="table_data"><?= $employe['Email']?></td>
                     <td class="table_data"><?= $employe['Telephone']?></td>
                     <td class="table_data"><?= $employe['type_user']?></td>
-                    <td class="table_icon"><a href="../Employes/EditEmploye/EditEmploye.php?code=<?php echo $employe['ID_Empl']; ?>" alt='modifier'><i class='bx bxs-edit-alt' style='color:#20f136' ></i></a></td>
-                    <td class="table_icon"><a href="../../../1A_PFA/Controller/ControllerEmploye.php?code=<?php echo $employe['ID_Empl']; ?>&action=delete" alt="delete"><i class="bx bxs-trash" style="color:#20f136"></i></a></td>
+                    <td class="table_icon"><a href="../Employes/EditEmploye/EditEmploye.php?code=<?php echo $employe['ID_Empl']; ?>" alt='modifier'><i class='bx bxs-edit-alt' style='color:#9207f5' ></i></a></td>
+                    <td class="table_icon"><a href="../../../1A_PFA/Controller/ControllerEmploye.php?code=<?php echo $employe['ID_Empl']; ?>&action=delete" alt="delete"><i class="bx bxs-trash" style="color:#9207f5"></i></a></td>
 
                 </tr>
             <?php endforeach; ?>

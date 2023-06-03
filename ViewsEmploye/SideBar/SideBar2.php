@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-
-    <!-- <script src="./jspdf.umd.min.js"></script> -->
+    
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../../1A_PFA/Views/SideBar/SideBarCSS.css">
     
@@ -36,19 +33,6 @@
 
         <div class="menu-bar">
             <div class="menu">
-
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/Employes/AllEmployes.php">
-                            <i class='bx bxs-user-detail icon'></i>
-                            <span class="text nav-text">Employes</span>
-                        </a>
-                    </li>
 
                     <li class="nav-link">
                         <a href="../../../1A_PFA/Views/Produits/AllProduits.php">

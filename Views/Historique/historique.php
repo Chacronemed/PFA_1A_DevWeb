@@ -1,4 +1,4 @@
-<?php require_once __DIR__.'../../SideBar/SideBar.php' ?>
+<?php require_once __DIR__.'/../SideBar/SideBar.php'; ?>
 
 <style>
 	.home {
@@ -37,111 +37,160 @@
 
 	.table th {
 		text-align: left;
-		border-top: 2px solid #009578;
-		border-bottom: 2px solid #009578;
+		border-top: 2px solid gray;
+		border-bottom: 2px solid gray;
 	}
 
 	.table td,
-	.search-input1 {
+	.search-input {
 		font-size: 1em;
 		padding: 0.6em 1em;
 	}
 
-	.search-input1 {
-        border: 0.5px solid;
-        outline: none;
-        font-family: "Fira Sans", sans-serif;
-        width: 100%; 
-        box-sizing: border-box; 
+	.search-input {
+		border: 0.5px solid;
+		outline: none;
+		font-family: "Fira Sans", sans-serif;
+		width: 100%;
+		box-sizing: border-box;
 		background-color: var(--body-color);
-    }
+	}
+
 	/*input container icon */
 	.input-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
 
-    .icon1 {
-        position: absolute;
-        left: 10px;
-        color: #999;
-    }
+	.icon1 {
+		position: absolute;
+		left: 10px;
+		color: #999;
+	}
 
-    .search-input1 {
-        padding-left: 30px; /* Adjust this value to create space for the icon */
-    }
+	.search-input {
+		padding-left: 30px; /* Adjust this value to create space for the icon */
+	}
 </style>
 
 <section class="home">
-  <h2 class="text">Historique</h2>
-	<table class="table">
-	<thead>
-    <tr>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="ID Affectation">
-            </div>
-        </th>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="Nom Employe">
-            </div>
-        </th>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="ID Employe">
-            </div>
-        </th>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="Nom Produit">
-            </div>
-        </th>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="ID Produit">
-            </div>
-        </th>
-        <th>
-            <div class="input-container">
-                <i class="bx bx-search icon1"></i>
-                <input type="text" class="search-input1" placeholder="date d'affectation">
-            </div>
-        </th>
-    </tr>
-</thead>
+	<h2 class="text">Historique</h2>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<table class="table" id="data-table">
+		<thead>
+			<tr>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="ID Affectation">
+					</div>
+				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="Nom Employe">
+					</div>
+				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="ID Employe">
+					</div>
+				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="Nom Produit">
+					</div>
+				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="ID Produit">
+					</div>
+				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="date d'affectation">
+					</div>
+				</th>
+			</tr>
+		</thead>
 
 		<tbody>
 			<?php foreach($affectations as $affectation):?>
-			<tr>
-				<td class="table_data"><?php echo $affectation['ID_Aff']?></td>
-				<td class="table_data"><?php echo $affectation['EmployeeName']." ".$affectation['Prenom']?></td>
-				<td class="table_data"><?php echo $affectation['ID_Empl']?></td>
-				<td class="table_data"><?php echo $affectation['ProductName']?></td>
-				<td class="table_data"><?php echo $affectation['Id_Produit']?></td>
-				<td class="table_data"><?php echo $affectation['Date_Aff']?></td>
-			</tr>
+				<tr>
+					<td class="table_data"><?php echo $affectation['ID_Aff']?></td>
+					<td class="table_data"><?php echo $affectation['EmployeeName']." ".$affectation['Prenom']?></td>
+					<td class="table_data"><?php echo $affectation['ID_Empl']?></td>
+					<td class="table_data"><?php echo $affectation['ProductName']?></td>
+					<td class="table_data"><?php echo $affectation['Id_Produit']?></td>
+					<td class="table_data"><?php echo $affectation['Date_Aff']?></td>
+				</tr>
 			<?php endforeach;?>
 		</tbody>
 	</table>
+	<button onclick="generatePDF()">Generate PDF</button>
+ <!-- button-->
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" integrity="sha512-1/8DJLhOONj7obS4tw+A/2yb/cK9w5vWP+L4liQKYX/JeLZ/cqDuZfgDha4NK/kR/6b5IzHpS7/w80v4ED+8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
+	function generatePDF() {
+  window.jsPDF = window.jspdf.jsPDF;
+  const doc = new jsPDF();
+  const table = document.getElementById('data-table');
+
+ 	// Add title to the PDF
+	 const title = 'Historique des affectations';
+		const titleWidth = doc.getStringUnitWidth(title) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+		const titleX = (doc.internal.pageSize.width - titleWidth) / 2;
+		const titleY = 15;
+		doc.setFontSize(20);
+		doc.text(title, titleX, titleY);
+
+  // Define columns and rows
+  const columns = ['ID_Aff', 'EmployeeName', 'ID_Empl', 'ProductName', 'Id_Produit', 'Date_Aff'];
+  const rows = [];
+
+  // Extract data from table
+  for (let i = 0; i < table.rows.length; i++) {
+    const rowData = [];
+    const row = table.rows[i];
+    for (let j = 0; j < row.cells.length; j++) {
+      rowData.push(row.cells[j].innerText);
+    }
+    rows.push(rowData);
+  }
+
+  // Set table format
+  const tableConfig = {
+    startY: 20,
+    headStyles: { fillColor: [0, 0, 0] },
+    head: [columns],
+    body: rows
+  };
+
+  doc.autoTable(tableConfig);
+
+  // Generate download link for the PDF
+  const pdfData = doc.output('blob');
+  const downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(pdfData);
+  downloadLink.download = 'EmployeeHistory.pdf'; // Set the desired filename here
+  downloadLink.click();
+}
 	document.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".search-input").forEach((inputField) => {
 			const tableRows = inputField.closest("table").querySelectorAll("tbody > tr");
 			const headerCell = inputField.closest("th");
 			const otherHeaderCells = headerCell.closest("tr").children;
 			const columnIndex = Array.from(otherHeaderCells).indexOf(headerCell);
-			const searchableCells = Array.from(tableRows).map(
-				(row) => row.querySelectorAll("td")[columnIndex]
-			);
+			const searchableCells = Array.from(tableRows).map((row) => row.querySelectorAll("td")[columnIndex]);
 
 			inputField.addEventListener("input", () => {
 				const searchQuery = inputField.value.toLowerCase();
