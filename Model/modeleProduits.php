@@ -33,6 +33,17 @@ class modeleProduit{
         return $query;
     }
 
+    public function ShowAllProdNonAffecter(){
+        $query=$this->db->prepare("SELECT * FROM produits WHERE Affectation = 'Non Affecté';");
+        $query->execute();
+        return $query;
+    }
+    public function AffectProduit($ID){
+        $query=$this->db->prepare("UPDATE produits SET Affectation = 'Affecté' WHERE Affectation = 'Non Affecté' AND ID_Produit = ?; ");
+        $query->execute([$ID]);
+        return $query;
+    }
+
     //tout les produits groupé par nom
     public function getAllProduits()
     {
@@ -44,7 +55,7 @@ class modeleProduit{
     //tout les produit ayant un meme nom
     public function getProduitsByName($name)
     {
-        $query = $this->db->prepare('SELECT Nom, ID_Cat, ID_Produit FROM produits WHERE Nom = :name');
+        $query = $this->db->prepare('SELECT Nom, ID_Cat, ID_Produit,Affectation FROM produits WHERE Nom = :name');
         $query->bindParam(':name', $name);
         $query->execute();
         $produits = $query->fetchAll(PDO::FETCH_ASSOC);

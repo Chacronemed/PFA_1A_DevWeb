@@ -193,12 +193,14 @@ tr {
                      <th>Nom</th>
                      <th>ID_Produit</th>
                      <th>ID_Cat</th>
+                     <th>Etat</th>
                  </tr>
                  <?php foreach ($detailsProduit as $detail): ?>
                      <tr>
                          <td><?= $detail['Nom'] ?></td>
                          <td><?= $detail['ID_Produit'] ?></td>
                          <td><?= $detail['ID_Cat'] ?></td>
+                         <td><?= $detail['Affectation'] ?></td>
                          <td><a href="../Produits/EditProduit/editProduit.php?code=<?php echo $detail['ID_Produit'];?>" alt="modifier"><i class='bx bxs-edit-alt' style='color:#20f136' ></i></a></td>
                          <td><a href="../../Controller/ControllerProduits.php?action=delete&code=<?php echo $detail['ID_Produit']; ?>" alt="supprimer"><i class="bx bxs-trash" style="color:#20f136"></i></a></td>
                      </tr>

@@ -167,6 +167,7 @@ require_once __DIR__.'../../SideBar/SideBar.php'
         </option>
       <?php endforeach; ?>
     </select>
+    <input type="hidden" name="ID_Produit" value="<?php echo $produit['ID_Produit']; ?>">
   </div>
 
   <br>

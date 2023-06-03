@@ -23,6 +23,14 @@ class ControllerProduits{
         $produits=$this->modeleProduit->ShowAll();
         return $produits;
     }
+    public function ShowAllProdNonAffecterAction(){
+        $produits=$this->modeleProduit->ShowAllProdNonAffecter();
+        return $produits;
+    }
+    public function AffectProduitAction($ID){
+        $produit=$this->modeleProduit->AffectProduit($ID);
+        return $produit;
+    }
 
     public function affichageProduits()
     {   
