@@ -9,6 +9,9 @@
     h3 {
         font-weight: 900;
     }
+    h4{
+        color: var(--text-color);
+    }
 
     h1 {
         color: var(--text-color);
@@ -96,6 +99,7 @@
         font-weight: 700;
         transition: background .3s;
         cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .friend-request-card .button:first-child {
@@ -119,6 +123,11 @@
     .friend-request-card .button.button-secondary:hover {
         background: #5e737f;
     }
+    /*button unclickable */
+    .friend-request-card .button-disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
 </style>
 <div class="container">
   <div class="column">
@@ -135,8 +144,20 @@
             <h4>il y a <?php echo $demande['ProductCount']?> <?=$demande['NomProduit']  ?> non affecté  </h4>
         </div>
         <div class="friend-request-actions">
-            <button class="button button-primary">Accept</button>
-            <button class="button button-secondary">Decline</button>
+            <form method="POST" action="./ControllerDemande.php?action=accept">
+                <input type="hidden" name="demande" value="<?= $demande['ID_Demande']?>">
+                <input type="hidden" name="ID_Empl" value="<?=$demande['ID_Empl']?>">
+                <input type="hidden" name="NomProduit" value="<?= $demande['NomProduit']?>">
+                <?php if ($demande['ProductCount'] > 0): ?>
+                 <button class="button button-primary">Accept</button>
+                <?php else: ?>
+                 <button class="button button-primary button-disabled" disabled>En Rupture(0)</button>
+                <?php endif; ?>
+            </form>
+            <form method="POST" action="./ControllerDemande.php?action=refus">
+                <input type="hidden" name="demande" value="<?= $demande['ID_Demande']?>">
+                <button class="button button-secondary">Decline</button>
+            </form>
         </div>
         </div>
     <?php endforeach; ?>

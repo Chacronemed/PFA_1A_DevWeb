@@ -1,10 +1,13 @@
 <?php
 require_once '../Model/modeleDemande.php';
+require_once '../Model/modeleProduits.php';
+require_once '../Model/modeleAffectattion.php';
 
  class ControllerDemande{
      
     private $modele;
     private $modeleproduit;
+    private $modeleAffectation;
     private $action;
 
     public function __construct()
@@ -18,6 +21,7 @@ require_once '../Model/modeleDemande.php';
         require_once '../../1A_PFA/Views/Demande/demande.php';
 
     }
+    
 
     public function action(){
       $action='all';
@@ -30,8 +34,23 @@ require_once '../Model/modeleDemande.php';
             case 'all':
                 $this->AlldemandeAction();
                 break;
-        }
-
+            case 'accept':
+                $name=$_POST['NomProduit'];
+                $this->modeleproduit=new modeleProduit;
+                $ID_Produit=$this->modeleproduit->AffectProduitByname($name);
+                $ID_Demande = $_POST['demande'];
+                $this->modele=new modeleDemande;
+                $this->modele->AcceptDemande($ID_Demande);
+                $this->modeleAffectation=new modeleAffectation;
+                $ID_Empl=$_POST['ID_Empl'];
+                $this->modeleAffectation->Assign($ID_Empl,$ID_Produit); 
+                header('Location: ../Controller/ControllerDemande.php');
+                break;
+            case 'refus':
+                $ID=$_POST['demande'];
+                $this->modele->refusDemande($ID);
+                break;
+        }   
         }
 
     }
