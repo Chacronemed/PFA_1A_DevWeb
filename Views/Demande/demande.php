@@ -1,4 +1,4 @@
-<?php require_once '../SideBar/SideBar.php' ?>
+<?php require_once __DIR__.'../../SideBar/SideBar.php' ?>
 <section class="home">
 <style>
     @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
@@ -41,12 +41,16 @@
         display: flex;
         width: 100%;
         padding: 20px;
+        margin-bottom: 20px; 
         flex-direction: row;
         align-items: center;
-        background: linear-gradient(to bottom right, var(--sidebar-color) 40%,var(--body-color) );
+        background: linear-gradient(to bottom right, var(--sidebar-color) 40%,#967bb6 );
         border-radius: 8px;
         box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.6);
+        margin-left: -10px; 
+        margin-right: 10px; 
     }
+
 
     .friend-request-card .profile-picture {
         width: 100px;
@@ -99,12 +103,12 @@
     }
 
     .friend-request-card .button.button-primary {
-        background: #3A9BDE;
+        background: #967bb6;
         color: #fff;
     }
 
     .friend-request-card .button.button-primary:hover {
-        background: #2985b7;
+        background: #C3B5FF;
     }
 
     .friend-request-card .button.button-secondary {
@@ -119,21 +123,23 @@
 <div class="container">
   <div class="column">
     
-    <h1>Demandes: </h1>
-    <div class="friend-request-card">
-      <div class="profile-picture">
-        <img src="https://thepracticaldev.s3.amazonaws.com/i/sldkglekmnqc4outtfqd.jpg">
-      </div>
-      <div class="user-details">
-        <h1 class="text">Love Grayson</h1>
-        <h2>13 Mutual Friends</h2>
-      </div>
-      <div class="friend-request-actions">
-        <button class="button button-primary">Accept</button>
-        <button class="button button-secondary">Decline</button>
-      </div>
-    </div>
-
+    <h1>Demandes: </h1>  
+    <?php foreach($demandes as $demande): ?>
+        <div class="friend-request-card">
+        <div class="profile-picture">
+            <img src="../images/demande.png">
+        </div>
+        <div class="user-details">
+            <h1 class="text"><?=$demande['NomEmploye']  ?> <?=$demande['Nom']  ?> demande <b><?=$demande['NomProduit']  ?></b></h1>
+            <h2><?=$demande['NomEmploye']  ?> ID :<?=$demande['ID_Empl']?></h2>
+            <h4>il y a <?php echo $demande['ProductCount']?> <?=$demande['NomProduit']  ?> non affecté  </h4>
+        </div>
+        <div class="friend-request-actions">
+            <button class="button button-primary">Accept</button>
+            <button class="button button-secondary">Decline</button>
+        </div>
+        </div>
+    <?php endforeach; ?>
   </div>
 </div>
 </section>

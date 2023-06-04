@@ -67,7 +67,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/notifi.php">
+                        <a href="../../../1A_PFA/Controller/ControllerDemande.php">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notifications</span>
                         </a>
