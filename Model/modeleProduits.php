@@ -44,6 +44,29 @@ class modeleProduit{
         return $query;
     }
 
+    public function AffectProduitByname($name){
+        $query = $this->db->prepare("SELECT ID_Produit FROM produits WHERE Affectation = 'Non Affecté' AND Nom = ?;");
+        $query->execute([$name]);
+    
+        // Check if any products with the given name are available for assignment
+        if ($query->rowCount() > 0) {
+            // Fetch the first product ID
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            $assignedProductId = $row['ID_Produit'];
+    
+            // Update the assignment for the specific product
+            $updateQuery = $this->db->prepare("UPDATE produits SET Affectation = 'Affecté' WHERE ID_Produit = ?;");
+            $updateQuery->execute([$assignedProductId]);
+    
+            // Return the assigned product ID
+            return $assignedProductId;
+        } else {
+            // No products with the given name are available for assignment
+            return null;
+        }
+    }
+    
+
     //tout les produits groupé par nom
     public function getAllProduits()
     {

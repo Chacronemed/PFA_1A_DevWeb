@@ -67,7 +67,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/SideBar/notif.php">
+                        <a href="../../../1A_PFA/Views/SideBar/notifi.php">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notifications</span>
                         </a>
