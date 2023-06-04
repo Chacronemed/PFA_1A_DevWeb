@@ -33,6 +33,7 @@ require __DIR__.'/../../Controller/ControllerProduits.php';
     display: grid;
     /*grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));*/
     gap:15px;
+    
 }
 
 .container .box-container .box{

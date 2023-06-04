@@ -9,7 +9,7 @@
 
     <!-- <script src="./jspdf.umd.min.js"></script> -->
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../../../1A_PFA/Views/SideBar/SideBarCSS.css">
+    <link rel="stylesheet" href="../../../1A_PFA/Views/SideBar/CSSSIdeBar.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
