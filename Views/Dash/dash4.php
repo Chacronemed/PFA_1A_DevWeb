@@ -15,14 +15,14 @@ if ($conn->connect_error) {
     die("Connexion échouée : " . $conn->connect_error);
 }
 
-$sql = "SELECT Nom, qte_stock FROM Produits";
+$sql = "SELECT Nom, COUNT(*) AS nombre FROM Produits GROUP BY Nom";
 $result = $conn->query($sql);
 
 $dataPoints = array();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $dataPoint = array("label" => $row["Nom"], "qte_stock" => $row["qte_stock"]);
+        $dataPoint = array("label" => $row["Nom"], "nombre" => $row["nombre"]);
         array_push($dataPoints, $dataPoint);
     }
 }
@@ -67,21 +67,23 @@ $conn->close();
     echo '</div>';
     echo '</div>';
 
+
+
     echo '</div>';
     echo '</div>';
     echo '</section>';
     ?>
 
     <script>
-        // Récupérer les labels et les quantités de stock à partir des données PHP
+        // Récupérer les labels et les nombres de produits à partir des données PHP
         var dataPoints = <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>;
 
-        // Récupérer les labels et les quantités de stock à partir des données
+        // Récupérer les labels et les nombres de produits à partir des données
         var labels = dataPoints.map(function(dataPoint) {
             return dataPoint.label;
         });
         var quantities = dataPoints.map(function(dataPoint) {
-            return dataPoint.qte_stock;
+            return dataPoint.nombre;
         });
 
         // Créer un nouveau graphique
@@ -91,7 +93,7 @@ $conn->close();
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Quantité de stock',
+                    label: 'Nombre de produits',
                     data: quantities,
                     backgroundColor: 'rgba(54, 162, 235, 0.6)'
                 }]
@@ -101,7 +103,8 @@ $conn->close();
                 maintainAspectRatio: false,
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        stepSize: 1 // Pour afficher uniquement des valeurs entières sur l'axe Y
                     }
                 }
             }
@@ -195,6 +198,29 @@ $conn->close();
         transform: scale(1.03);
     }
 
+    .container .box .image-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        /* Ratio hauteur/largeur de l'image */
+    }
+
+    .container .box .box-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container .box-container .box .box-title {
+        color: var(--text-color);
+        font-size: 22px;
+        padding: 10px 0;
+    }
+
     table {
         margin: 0 auto;
         width: 90%;
@@ -247,6 +273,5 @@ $conn->close();
         background-color: #34974d;
         display: flex;
         align-items: center;
-
     }
 </style>

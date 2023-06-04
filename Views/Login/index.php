@@ -2,24 +2,36 @@
 <html>
 
 <head>
-   <title>Login</title>
+   <title>
+      <h3>Login Estock</h3>
+   </title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <style>
       body {
-         background-image: url("estock.png");
+         margin: 0;
+         padding: 0;
+         background-image: url("estock.jpeg");
          background-repeat: no-repeat;
          background-position: center;
          background-size: cover;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
       }
 
       .box {
          background-color: #D7EDEC;
+         opacity: 80%;
          padding: 20px;
-         margin: 0 auto;
          width: 300px;
          height: 300px;
          border-radius: 10px;
          box-shadow: 0 0 10px 0px rgba(58, 125, 233, 0.5);
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
       }
 
       .input {
@@ -30,12 +42,8 @@
          background-color: #ccc;
          box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
          transition: 300ms ease-in-out;
-      }
-
-      .input:focus {
-         background-color: white;
-         transform: scale(1.05);
-         box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+         width: 100%;
+         margin-bottom: 10px;
       }
 
       .btn-donate {
@@ -79,7 +87,6 @@
       @media screen and (max-width: 570px) {
          .box {
             width: 65%;
-            margin-left: none;
             padding: 40px;
          }
       }
@@ -88,12 +95,12 @@
 
 <body>
    <div class="box">
-      <h1>Login </h1>
+      <h1>Login Estock</h1>
       <form name="form" action="login.php" onsubmit="return isValid()" method="POST">
-         <label>Username:</label><br>
-         <input type="text" id="user" class="input" name="user"><br><br>
-         <label>Password:</label><br>
-         <input type="password" id="pass" class="input" name="pass"><br><br>
+         <label>Username:</label>
+         <input type="text" id="user" class="input" name="user" required><br>
+         <label>Password:</label>
+         <input type="password" id="pass" class="input" name="pass" required><br>
          <input type="submit" id="btn" class="btn-donate" value="Login" name="submit" />
       </form>
    </div>
@@ -103,13 +110,13 @@
          var user = document.form.user.value;
          var pass = document.form.pass.value;
          if (user.length === 0 && pass.length === 0) {
-            alert("Username and password field is empty!!!");
+            alert("Username and password field is empty!");
             return false;
          } else if (user.length === 0) {
-            alert("Username field is empty!!!");
+            alert("Username field is empty!");
             return false;
          } else if (pass.length === 0) {
-            alert("Password field is empty!!!");
+            alert("Password field is empty!");
             return false;
          }
       }

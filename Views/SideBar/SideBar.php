@@ -29,7 +29,7 @@
 
                 <div class="text logo-text">
                     <span class="name">E-Stock</span>
-                    <span class="profession">Gestion du parc</span>
+                    <span class="profession">Gestion du parc<br>infoematique</span>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/notifi.php">
+                        <a href="../../../1A_PFA/Views/SideBar/notif.php">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notifications</span>
                         </a>
@@ -92,7 +92,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="../../../1A_PFA/Views/login/index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
