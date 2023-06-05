@@ -96,9 +96,9 @@
 <body>
    <div class="box">
       <h1>Login Estock</h1>
-      <form name="form" action="login.php" onsubmit="return isValid()" method="POST">
+      <form name="form" action="../../Controller/login.php" onsubmit="return isValid()" method="POST">
          <label>Username:</label>
-         <input type="text" id="user" class="input" name="user" required><br>
+         <input type="email" id="user" class="input" name="user" required><br>
          <label>Password:</label>
          <input type="password" id="pass" class="input" name="pass" required><br>
          <input type="submit" id="btn" class="btn-donate" value="Login" name="submit" />
