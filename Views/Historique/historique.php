@@ -235,12 +235,12 @@
 		font-weight: bold;
 		letter-spacing: 5px;
 		text-transform: uppercase;
-		color: #2c9caf;
+		color: var(--primary-color);
 		transition: all 1000ms;
 		font-size: 15px;
 		position: relative;
 		overflow: hidden;
-		outline: 2px solid #2c9caf;
+		outline: 2px solid var(--primary-color);
 	}
 
 	button:hover {

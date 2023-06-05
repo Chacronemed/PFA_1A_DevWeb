@@ -16,7 +16,7 @@ $pdf = new FPDF();
 $pdf->AddPage();
 
 // Ajouter le logo
-$pdf->Image('estock.jpeg', 10, 10, 30);
+//$pdf->Image('estock.jpeg', 10, 10, 30);
 
 $pdf->SetFont('Arial', 'B', 16);
 $pdf->Cell(40, 10, 'Liste des produits', 0, 1);
@@ -30,7 +30,7 @@ $pdf->SetFont('Arial', '', 12);
 
 $pdf->Cell(30, 10, 'ID', 1, 0);
 $pdf->Cell(60, 10, 'Nom', 1, 0);
-$pdf->Cell(60, 10, 'Catégorie', 1, 1);
+$pdf->Cell(60, 10, 'Categorie', 1, 1);
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $pdf->Cell(30, 10, $row['ID_Produit'], 1, 0);
