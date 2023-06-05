@@ -37,5 +37,22 @@ class modele{
         $query=$this->db->prepare('UPDATE Produits SET Nom=?, WHERE ID_Produit=?');
         $query->execute([$Produit['Nom'],$Produit['ID_Produit']]);
     }*/
+    /*partie des employes */
+
+    public function AllProdByEmploye($ID_Empl){
+        $query=$this->db->prepare('SELECT p.ID_Produit, p.Nom
+        FROM employes AS e
+        JOIN affectations AS a ON e.ID_Empl = a.ID_Empl
+        JOIN produits AS p ON a.ID_Produit = p.ID_Produit
+        WHERE e.ID_Empl = ?;
+        ');
+        $query->execute([$ID_Empl]);
+        return $query->fetchAll();
+    }
+
+    public function changePassword($Password,$ID_Empl){
+        $query=$this->db->prepare('UPDATE employes SET Password = ? WHERE ID_Empl = ?;');
+        $query->execute([password_hash($Password,PASSWORD_DEFAULT),$ID_Empl]);
+    }
 
 } 

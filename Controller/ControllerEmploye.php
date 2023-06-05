@@ -37,6 +37,16 @@ class controlleurEmploye{
         $query=$this->modele->UpdateEmploye($id);
         return $query;
     }
+    public function AllProdByEmployeAction($ID){
+        $produits=$this->modele->AllProdByEmploye($ID);
+        require_once '../ViewsEmploye/AllProduitEmploye.php';
+    }
+
+    public function ChangePasswordAction($Password,$ID_Empl){
+        $this->modele->changePassword($Password,$ID_Empl);
+        header('Location: ./ControllerEmploye.php?action=EmployeProduit');
+    }
+
     public function action(){
         
         if(isset($_GET['action'])){
@@ -61,8 +71,15 @@ class controlleurEmploye{
                 $this->UpdateEmployeAction($employe);
                 header('Location: ../../1A_PFA/Views/Employes/AllEmployes.php');
                 break;
-
-
+            case 'EmployeProduit':
+                session_start();
+                $ID=$_SESSION['user_id'];
+                $this->AllProdByEmployeAction($ID);
+                break;
+            case 'changePassword':
+                session_start();
+                $ID=$_SESSION['user_id'];
+                $Password=$_POST['Password'];
          }
         }
     }

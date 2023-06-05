@@ -10,7 +10,7 @@
 
     <!-- <script src="./jspdf.umd.min.js"></script> -->
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../../../1A_PFA/Views/SideBar/CSSSIdeBar.css">
+    <link rel="stylesheet" href="../../../1A_PFA/ViewsEmploye/SideBar/NewSideBar.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -27,9 +27,9 @@
                     <img src="../../../1A_PFA/images/logo.png" alt="logo company">
                 </span>
 
-                <div class="text logo-text">
+                <div class="text logo-text" id="logoText">
                     <span class="name">E-Stock</span>
-                    <span class="profession">Gestion du parc<br>infoematique</span>
+                    <span class="profession">Bienvenue</span>
                 </div>
             </div>
 
@@ -46,50 +46,27 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/Dash/dash4.php">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">Tableau de bord</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/Employes/AllEmployes.php">
-                            <i class='bx bxs-user-detail icon'></i>
-                            <span class="text nav-text">Employes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/Produits/AllProduits.php">
+                        <a href="../../../1A_PFA/Controller/ControllerEmploye.php?action=EmployeProduit">
                             <i class='bx bxs-package icon'></i>
                             <span class="text nav-text">Produits</span>
                         </a>
                     </li>
-
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Controller/ControllerAffectation.php">
-                            <i class='bx bx-user-check icon'></i>
-                            <span class="text nav-text">affectations</span>
+                        <a href="../../../1A_PFA//Controller/ControllerProduits.php?action=demande">
+                            <i class='bx bx-envelope-open icon'></i>
+                            <span class="text nav-text">Demande</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Controller/ControllerDemande.php">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Controller/ControllerHistorique.php">
-                            <i class='bx bx-history icon'></i>
-                            <span class="text nav-text">historique</span>
-                        </a>
-                    </li>
-
                 </ul>
             </div>
 
             <div class="bottom-content">
+                <li>
+                    <a href="../ViewsEmploye/PasswordChange.php">
+                        <i class='bx bx-lock-alt icon'></i>
+                        <span class="text nav-text">Changer votre mot de passe</span>
+                    </a>
+                </li>
                 <li class="">
                     <a href="../../../1A_PFA/Controller/AuthControlle.php?action=out">
                         <i class='bx bx-log-out icon'></i>

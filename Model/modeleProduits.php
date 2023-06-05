@@ -8,6 +8,11 @@ class modeleProduit{
             die("Connection failed: " . mysqli_connect_error());
         }
     }
+    public function ShowProductsNames(){
+        $query=$this->db->prepare('SELECT DISTINCT Nom FROM produits;');
+        $query->execute();        
+        return $query;
+    }
     public function AddProduit($produit){
         $query=$this->db->prepare('INSERT INTO produits (ID_Produit, Nom, ID_Cat) VALUES (NULL, ?, ?)');
         $query->execute([$produit['Nom'], $produit['ID_Cat']]);        

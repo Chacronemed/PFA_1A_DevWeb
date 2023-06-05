@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($_SESSION['user_type'] === 'AD') {
             header('Location: ../Views/Dash/dash4.php');
         } else {
-            header('Location: ../ViewsEmploye/AllProduitEmploye.php');
+            header('Location: ./ControllerEmploye.php?action=EmployeProduit');
         }
         exit();
     } else {

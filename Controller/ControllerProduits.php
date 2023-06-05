@@ -7,6 +7,10 @@ class ControllerProduits{
     {
         $this->modeleProduit=new modeleProduit();
     }
+    public function ShowProductsNamesAction(){
+        $produits=$this->modeleProduit->ShowProductsNames();
+        return $produits;
+    }
 
     public function SelectProduitAction(){
         $ID=$_GET['code'];
@@ -88,8 +92,10 @@ class ControllerProduits{
                 $this->UpdateProduitAction($employe);
                 header('Location: ../Views/Produits/AllProduits.php');
                 break;
-
-
+            case 'demande':
+                $produits=$this->ShowProductsNamesAction();
+                require_once '../ViewsEmploye/demandeVue.php';
+                break;
          }
         }
     }

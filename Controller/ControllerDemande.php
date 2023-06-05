@@ -21,6 +21,10 @@ require_once '../Model/modeleAffectattion.php';
         require_once '../../1A_PFA/Views/Demande/demande.php';
 
     }
+    public function FaireDemandeAction($NomProduit,$ID_Empl){
+        $query=$this->modele->Fairedemande($NomProduit,$ID_Empl);
+        header('Location: ./ControllerProduits.php?action=demande');
+    }
     
 
     public function action(){
@@ -49,6 +53,11 @@ require_once '../Model/modeleAffectattion.php';
             case 'refus':
                 $ID=$_POST['demande'];
                 $this->modele->refusDemande($ID);
+                break;
+            case 'employeDemande':
+                $NomProduit=$_POST['produitNom'];
+                $ID_Empl=$_POST['ID_Empl'];
+                $this->FaireDemandeAction($NomProduit,$ID_Empl);
                 break;
         }   
         }
