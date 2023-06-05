@@ -7,6 +7,10 @@ class ControllerProduits{
     {
         $this->modeleProduit=new modeleProduit();
     }
+    public function ShowProductsNamesAction(){
+        $produits=$this->modeleProduit->ShowProductsNames();
+        return $produits;
+    }
 
     public function SelectProduitAction(){
         $ID=$_GET['code'];
@@ -73,9 +77,13 @@ class ControllerProduits{
         if(isset($action)) {
          switch($action){
             case 'add':
+                
+                $repitition=$_POST['Quantité'];
                 $produit=$_POST;
                 //print_r($User);
+                for ($i = 1; $i <= $repitition; $i++){
                 $this->AddProduitAction($produit);
+                }
                 header('Location: ../Views/Produits/AllProduits.php');
                 break;
             case 'delete':
@@ -88,8 +96,10 @@ class ControllerProduits{
                 $this->UpdateProduitAction($employe);
                 header('Location: ../Views/Produits/AllProduits.php');
                 break;
-
-
+            case 'demande':
+                $produits=$this->ShowProductsNamesAction();
+                require_once '../ViewsEmploye/demandeVue.php';
+                break;
          }
         }
     }

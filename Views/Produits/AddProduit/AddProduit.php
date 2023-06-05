@@ -19,6 +19,10 @@
       <input type="number" name="ID_Cat" required="">
       <label>ID de la catégorie</label> <!--needs to be changed to the name of the categorie-->
     </div>
+    <div class="user-box">
+      <input type="number" min="1" name="Quantité" required="">
+      <label>Quantité</label> <!--needs to be changed to the name of the categorie-->
+    </div>
     <button>
       <span></span>
       <span></span>

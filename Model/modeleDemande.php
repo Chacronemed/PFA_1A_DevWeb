@@ -31,9 +31,11 @@
             $query->execute([$ID_Demande]);
         }
 
-        public function Fairedemande($demande){
-            $query=$this->db->prepare('INSERT INTO demande VALUES(NULL,?,?); ');
-            $query->execute([$demande['NomProduit'],$demande['ID_Empl']]);
+        public function Fairedemande($NomProduit,$ID_Empl){
+            $query = $this->db->prepare('INSERT INTO demande (`NomProduit`, `ID_Empl`, `EtatDemande`) VALUES (?, ?, \'en attente\')');
+            $query->execute([$NomProduit, (int)$ID_Empl]);
+
+
         }
 
 }
