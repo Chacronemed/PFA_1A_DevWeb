@@ -3,7 +3,7 @@
 
 <head>
    <title>
-      <h3>Login Estock</h3>
+      Login
    </title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <style>
