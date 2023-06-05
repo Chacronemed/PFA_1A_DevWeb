@@ -41,10 +41,16 @@
 
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="searchInput"  placeholder="Search...">
                 </li>
 
                 <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../../../1A_PFA/Views/Dash/dash4.php">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Tableau de bord</span>
+                        </a>
+                    </li>
                     <li class="nav-link">
                         <a href="../../../1A_PFA/Views/Employes/AllEmployes.php">
                             <i class='bx bxs-user-detail icon'></i>
@@ -67,16 +73,9 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/SideBar/notif.php">
+                        <a href="../../../1A_PFA/Controller/ControllerDemande.php">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notifications</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="../../../1A_PFA/Views/Dash/dash4.php">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">Tableau de bord</span>
                         </a>
                     </li>
 
@@ -120,6 +119,8 @@
     </section>-->
 
     <script>
+        const searchInput = document.getElementById('searchInput');
+        const menuLinks = document.querySelectorAll('.menu-links li');
         const body = document.querySelector('body'),
             sidebar = body.querySelector('nav'),
             toggle = body.querySelector(".toggle"),
@@ -146,4 +147,24 @@
 
             }
         });
+
+        searchInput.addEventListener('keyup', function(event) {
+        const searchTerm = event.target.value.toLowerCase();
+
+        menuLinks.forEach(function(link) {
+            const text = link.textContent.toLowerCase();
+
+            if (text.includes(searchTerm)) {
+                link.style.display = 'block';
+            } else {
+                link.style.display = 'none';
+                }
+            });
+        });
+        function highlightSearchTerm(link, searchTerm) {
+        const linkText = link.textContent;
+        const regex = new RegExp(searchTerm, 'gi');
+        const highlightedText = linkText.replace(regex, '<span class="highlighted">$&</span>');
+        link.innerHTML = highlightedText;
+        }
     </script>
