@@ -77,9 +77,13 @@ class ControllerProduits{
         if(isset($action)) {
          switch($action){
             case 'add':
+                
+                $repitition=$_POST['Quantité'];
                 $produit=$_POST;
                 //print_r($User);
+                for ($i = 1; $i <= $repitition; $i++){
                 $this->AddProduitAction($produit);
+                }
                 header('Location: ../Views/Produits/AllProduits.php');
                 break;
             case 'delete':
