@@ -8,16 +8,14 @@ body {
 
 .login-box {
   position: absolute;
-  opacity: 80%;
   top: 50%;
   left: 50%;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgb(73, 66, 228);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgb(138, 43, 226);
-  border-radius: 10px;
+  background: rgba(73, 66, 228, 0.8);
+  /* Adjust the alpha value as desired */
+  /* Rest of the CSS */
 }
 
 .login-box .user-box {
