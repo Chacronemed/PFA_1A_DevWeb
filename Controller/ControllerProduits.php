@@ -68,6 +68,9 @@ class ControllerProduits{
         // Load the view to display the product details
         require_once 'viewProduitDetails.php';
     }
+    public function libererproduitAction($ID_Produit){
+        $this->modeleProduit->libererproduit($ID_Produit);
+    }
     public function action(){
         
         if(isset($_GET['action'])){

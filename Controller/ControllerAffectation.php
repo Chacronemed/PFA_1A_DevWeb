@@ -31,6 +31,10 @@ class ControllerAffectation
         $query = $this->modele->Assign($employe, $produit);
         return $query;
     }
+    public function retraiteAction($ID_Produit)
+    {
+        $query = $this->modele->retraite($ID_Produit);
+    }
     public function action()
     {
         $action = 'all';
@@ -53,6 +57,11 @@ class ControllerAffectation
                 $this->AssignAction($employe, $produit);
                 header('Location: ../ControllerAffectation.php?assigncontrol');
                 break;
+            case 'liberer':
+                $ID_Produit = $_GET['ID_Produit'];
+                $this->retraiteAction($ID_Produit);
+                $this->Prod->libererproduitAction($ID_Produit) .
+                    header('Location: ./ControllerHistorique.php?ID_Produit=' . $ID_Produit);
         }
     }
 }

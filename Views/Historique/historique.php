@@ -13,6 +13,7 @@
 	}
 
 	table {
+		margin-left: 80px;
 		width: 100%;
 		border-collapse: collapse;
 		table-layout: fixed;
@@ -117,18 +118,29 @@
 						<input type="text" class="search-input" placeholder="date d'affectation">
 					</div>
 				</th>
+				<th>
+					<div class="input-container">
+						<i class="bx bx-search icon1"></i>
+						<input type="text" class="search-input" placeholder="date de Retraite">
+					</div>
+				</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<?php foreach ($affectations as $affectation) : ?>
 				<tr>
-					<td class="table_data"><?php echo $affectation['ID_Aff'] ?></td>
-					<td class="table_data"><?php echo $affectation['EmployeeName'] . " " . $affectation['Prenom'] ?></td>
-					<td class="table_data"><?php echo $affectation['ID_Empl'] ?></td>
-					<td class="table_data"><?php echo $affectation['ProductName'] ?></td>
-					<td class="table_data"><?php echo $affectation['Id_Produit'] ?></td>
-					<td class="table_data"><?php echo $affectation['Date_Aff'] ?></td>
+
+					<td class="table_data"><?php echo $affectation['ID_Aff']?></td>
+					<td class="table_data"><?php echo $affectation['EmployeeName']." ".$affectation['Prenom']?></td>
+					<td class="table_data"><?php echo $affectation['ID_Empl']?></td>
+					<td class="table_data"><?php echo $affectation['ProductName']?></td>
+					<td class="table_data"><?php echo $affectation['Id_Produit']?></td>
+					<td class="table_data"><?php echo $affectation['Date_Aff']?></td>
+					<td class="table_data"><?php  if($affectation['Date_Retraite']){echo $affectation['Date_Retraite'];}else{echo "pas encore";}?></td>
+					<?php if (!$affectation['Date_Retraite']) { echo '<td class="table_icon" style="border: none;"><a href="./ControllerAffectation.php?action=liberer&&ID_Produit='. $affectation['Id_Produit'].'" alt="retirer"><i class="bx bxs-trash icon" style="color:#9207f5"></i></a></td>';
+}?>
+
 				</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -155,8 +167,9 @@
 		doc.setFontSize(20);
 		doc.text(title, titleX, titleY);
 
-		// Define columns and rows
-		const columns = ['ID_Aff', 'EmployeeName', 'ID_Empl', 'ProductName', 'Id_Produit', 'Date_Aff'];
+
+  // Define columns and rows
+		const columns = ['ID_Aff', 'EmployeeName', 'ID_Empl', 'ProductName', 'Id_Produit', 'Date_Aff','Date_Retraite'];
 		const rows = [];
 
 		// Extract data from table
