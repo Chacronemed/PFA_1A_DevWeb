@@ -10,7 +10,7 @@
       body {
          margin: 0;
          padding: 0;
-         background-image: url("estock.jpeg");
+         background-image: url("logpage.jpeg");
          background-repeat: no-repeat;
          background-position: center;
          background-size: cover;
@@ -22,6 +22,7 @@
 
       .box {
          background-color: #C4B0FF;
+         opacity: 90%;
 
          padding: 20px;
          width: 350px;
