@@ -21,7 +21,7 @@
       }
 
       .box {
-         background-color: #D7EDEC;
+         background-color: #C4B0FF;
 
          padding: 20px;
          width: 350px;
