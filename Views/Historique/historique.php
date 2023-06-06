@@ -13,6 +13,7 @@
 	}
 
 	table {
+		margin-left: 80px;
 		width: 100%;
 		border-collapse: collapse;
 		table-layout: fixed;
