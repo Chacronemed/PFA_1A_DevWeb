@@ -29,7 +29,7 @@
 
                 <div class="text logo-text">
                     <span class="name">E-Stock</span>
-                    <span class="profession">Gestion du parc<br>infoematique</span>
+                    <span class="profession">Gestion du parc<br>informatique</span>
                 </div>
             </div>
 

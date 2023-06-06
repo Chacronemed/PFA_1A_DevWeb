@@ -3,8 +3,9 @@ require_once '../Model/modeleDemande.php';
 require_once '../Model/modeleProduits.php';
 require_once '../Model/modeleAffectattion.php';
 
- class ControllerDemande{
-     
+class ControllerDemande
+{
+
     private $modele;
     private $modeleproduit;
     private $modeleAffectation;
@@ -12,15 +13,16 @@ require_once '../Model/modeleAffectattion.php';
 
     public function __construct()
     {
-        $this->modele=new modeleDemande;
+        $this->modele = new modeleDemande;
         $action = 'all';
     }
 
-    public function AlldemandeAction(){
-        $demandes=$this->modele->Alldemande();
+    public function AlldemandeAction()
+    {
+        $demandes = $this->modele->Alldemande();
         require_once '../../1A_PFA/Views/Demande/demande.php';
-
     }
+
     public function FaireDemandeAction($NomProduit,$ID_Empl){
         $query=$this->modele->Fairedemande($NomProduit,$ID_Empl);
         header('Location: ./ControllerProduits.php?action=demande');
@@ -60,9 +62,9 @@ require_once '../Model/modeleAffectattion.php';
                 $this->FaireDemandeAction($NomProduit,$ID_Empl);
                 break;
         }   
-        }
 
+        }
     }
 }
-$c=new ControllerDemande;
+$c = new ControllerDemande;
 $c->action();
