@@ -95,7 +95,7 @@ $conn->close();
                 datasets: [{
                     label: 'Nombre de produits',
                     data: quantities,
-                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    backgroundColor: 'rgb(186,85,211)'
                 }]
             },
             options: {

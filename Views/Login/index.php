@@ -22,9 +22,9 @@
 
       .box {
          background-color: #D7EDEC;
-         opacity: 80%;
+
          padding: 20px;
-         width: 300px;
+         width: 350px;
          height: 300px;
          border-radius: 10px;
          box-shadow: 0 0 10px 0px rgba(58, 125, 233, 0.5);

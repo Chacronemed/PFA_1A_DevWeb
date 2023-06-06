@@ -1,9 +1,11 @@
 body {
-    background-image: url('../../../../1A_PFA/images/logo.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+  background-image: url('../../../../1A_PFA/Views/Employes/wall.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .login-box {
   position: absolute;
   top: 50%;
@@ -11,9 +13,9 @@ body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(24, 20, 20, 0.987);
+  background: rgb(220, 220, 220);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgb(138, 43, 226);
   border-radius: 10px;
 }
 
@@ -25,7 +27,7 @@ body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: greenyellow;
+  color: black;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
@@ -39,13 +41,13 @@ body {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: gold;
+  color: black;
   pointer-events: none;
   transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
   top: -20px;
   left: 0;
   color: #bdb8b8;
@@ -56,7 +58,7 @@ body {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #034e18;
+  background-color: rgb(186, 85, 211);
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
@@ -68,13 +70,13 @@ body {
 }
 
 .login-box button:hover {
-  background: #03f40f;
+  background: rgb(135, 206, 250);
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03f40f,
-              0 0 25px #03f40f,
-              0 0 50px #03f40f,
-              0 0 100px #03f40f;
+  box-shadow: 0 0 5px rgb(176, 196, 222),
+    0 0 25px white,
+    0 0 50px white,
+    0 0 100px white;
 }
 
 .login-box button span {
@@ -87,7 +89,8 @@ body {
     left: -100%;
   }
 
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -97,24 +100,23 @@ body {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03f40f);
+  background: linear-gradient(90deg, transparent, rgb(135, 206, 250));
   animation: btn-anim1 2s linear infinite;
 }
+
 .login-box .user-box select {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: gold;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  
-  .login-box .user-box select option {
-    background: rgba(24, 20, 20, 0.987);
-    color: #fff;
-  }
-  
-  
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box select option {
+  background: rgba(24, 20, 20, 0.987);
+  color: #fff;
+}
