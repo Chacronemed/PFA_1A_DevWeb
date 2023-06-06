@@ -98,4 +98,9 @@ class modeleProduit{
         $produit = $query->fetch(PDO::FETCH_ASSOC);
         return $produit;
     }
+
+    public function libererproduit($ID_Produit){
+        $query=$this->db->prepare("UPDATE produits SET Affectation = 'Non Affecté' WHERE ID_Produit = ?;");
+        $query->execute([$ID_Produit]);
+    }
 }
